@@ -1,0 +1,2 @@
+{{- define "ffc-sfd-messages-processor.container" -}}
+{{- end -}}

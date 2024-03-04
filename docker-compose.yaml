@@ -1,0 +1,19 @@
+services:
+  ffc-sfd-messages-processor:
+    build:
+      context: .
+      target: production
+    image: ffc-sfd-messages-processor
+    container_name: ffc-sfd-messages-processor
+    depends_on:
+      - ffc-sfd-messages-processor-postgres
+    environment:
+      APPINSIGHTS_CLOUDROLE: ffc-sfd-messages-processor-local
+      APPINSIGHTS_CONNECTIONSTRING: ${APPINSIGHTS_CONNECTIONSTRING}
+
+  ffc-sfd-messages-processor-postgres:
+    image: postgres:11.4-alpine
+    environment:
+      POSTGRES_DB: ffc-sfd-messages-processor
+      POSTGRES_PASSWORD: ppp
+      POSTGRES_USERNAME: postgres

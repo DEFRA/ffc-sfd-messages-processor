@@ -1,0 +1,4 @@
+{{- include "adp-aso-helm-library.flexible-servers-db" (list . "ffc-sfd-messages-processor.flexible-servers-db") -}}
+
+{{- define "ffc-sfd-messages-processor.flexible-servers-db" }}
+{{ end -}}
