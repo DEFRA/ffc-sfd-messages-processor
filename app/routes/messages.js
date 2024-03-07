@@ -1,7 +1,7 @@
 const { GET } = require('../constants/http-verbs')
 const { Client } = require('pg')
 
-module.exports = {
+module.exports = [{
   method: GET,
   path: '/messages',
   handler: async (request, h) => {
@@ -22,3 +22,4 @@ module.exports = {
     return h.response(result.rows).code(200)
   }
 }
+]
