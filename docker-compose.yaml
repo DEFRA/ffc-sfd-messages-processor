@@ -10,6 +10,13 @@ services:
     environment:
       APPINSIGHTS_CLOUDROLE: ffc-sfd-messages-processor-local
       APPINSIGHTS_CONNECTIONSTRING: ${APPINSIGHTS_CONNECTIONSTRING}
+      MESSAGE_HOST: ${MESSAGE_HOST}
+      MESSAGE_USER: ${MESSAGE_USER}
+      MESSAGE_PASSWORD: ${MESSAGE_PASSWORD}
+      POSTGRES_DB: ffc-sfd-messages-processor
+      POSTGRES_HOST: ffc-sfd-messages-processor-postgres
+      POSTGRES_USERNAME: postgres
+      POSTGRES_PASSWORD: ppp
 
   ffc-sfd-messages-processor-postgres:
     image: postgres:11.4-alpine
