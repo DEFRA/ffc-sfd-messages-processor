@@ -2,12 +2,12 @@
 # You may create Queues, Topics, Subscriptions, Storage Accounts, Databases and Role Assignments on these here.
 namespace: ffc-sfd
 namespaceTopics:
-  - name: 'messages-processor'
+  - name: 'messages'
     roleAssignments:
       - roleName: 'TopicSender'
       - roleName: 'TopicReceiver'
     topicSubscriptions:
-      - name: 'messages-processor-subscription'
+      - name: 'messages-processor'
 
 postgres:
   db:
