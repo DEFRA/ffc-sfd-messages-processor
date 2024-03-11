@@ -2,4 +2,4 @@ services:
   ffc-sfd-messages-processor:
     command: npm run test:debug
     ports:
-      - "9229:9229"
+      - "9006:9006"

@@ -1,12 +1,16 @@
 # For documentation on how to use, please go here: https://github.com/DEFRA/adp-aso-helm-library?tab=readme-ov-file#adp-platform-azure-service-operator-helm-library-chart.
 # You may create Queues, Topics, Subscriptions, Storage Accounts, Databases and Role Assignments on these here.
-namespaceQueues:
-  - name: backend
+namespace: ffc-sfd
+namespaceTopics:
+  - name: 'messages-processor'
     roleAssignments:
-      - roleName: 'QueueReceiver'
+      - roleName: 'TopicSender'
+      - roleName: 'TopicReceiver'
+    topicSubscriptions:
+      - name: 'messages-processor-subscription'
 
 postgres:
   db:
-    name: backend 
+    name: 'messages-processor-postgres'
     charset: UTF8
     collation: en_US.utf8
