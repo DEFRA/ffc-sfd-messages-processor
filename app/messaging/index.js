@@ -28,8 +28,8 @@ const startMessaging = async () => {
     host: process.env.MESSAGE_HOST,
     username: process.env.MESSAGE_USER,
     password: process.env.MESSAGE_PASSWORD,
-    address: 'ffc-sfd-messages-processor-subscription',
-    topic: 'ffc-sfd-messages-processor',
+    address: 'ffc-sfd-messages-processor',
+    topic: 'ffc-sfd-messages',
     type: 'subscription'
   }, handleMessage)
 
