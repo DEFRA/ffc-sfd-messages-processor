@@ -1,6 +1,6 @@
 {
   "name": "ffc-sfd-messages-processor",
-  "version": "0.1.2",
+  "version": "0.1.9",
   "description": "",
   "homepage": "github.com?owner=defra&repo=ffc-sfd-messages-processor&organization=defra",
   "main": "app/index.js",
@@ -10,8 +10,6 @@
     "test:watch": "jest --coverage=false --onlyChanged --watch --runInBand",
     "test:lint": "standard",
     "test:debug": "node --inspect-brk=0.0.0.0 ./node_modules/jest/bin/jest.js --coverage=false --onlyChanged --watch --runInBand --no-cache",
-    "test:unit": "jest --testPathPattern=test/unit --runInBand",
-    "test:unit-watch": "jest --testPathPattern=test/unit --coverage=false --onlyChanged --watch",
     "start:watch": "nodemon --inspect=0.0.0.0 --ext js --legacy-watch app/index.js",
     "start:debug": "nodemon --inspect-brk=0.0.0.0 --ext js --legacy-watch app/index.js"
   },
@@ -20,14 +18,19 @@
   "license": "OGL-UK-3.0",
   "dependencies": {
     "@hapi/hapi": "21.3.2",
-    "applicationinsights": "2.8.0"
+    "applicationinsights": "2.8.0",
+    "ffc-messaging": "2.9.0",
+    "hapi-pino": "12.1.0",
+    "joi": "17.12.2",
+    "pg": "8.11.3"
   },
   "devDependencies": {
+    "@types/jest": "^29.5.11",
     "jest": "29.7.0",
     "jest-junit": "16.0.0",
+    "log-timestamp": "0.3.0",
     "nodemon": "3.0.1",
-    "standard": "17.1.0",
-    "@types/jest": "^29.5.11"
+    "standard": "17.1.0"
   },
   "standard": {
     "globals": [
