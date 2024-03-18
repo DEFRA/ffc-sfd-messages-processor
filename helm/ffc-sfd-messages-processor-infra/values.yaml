@@ -7,7 +7,7 @@ namespaceTopics:
       - roleName: 'TopicSender'
       - roleName: 'TopicReceiver'
     topicSubscriptions:
-      - name: 'ffc-sfd-messages-processor'
+      - name: 'messages-processor'
 
 postgres:
   db:
