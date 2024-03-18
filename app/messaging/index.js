@@ -1,20 +1,12 @@
+const db = require('../data')
 const { MessageReceiver } = require('ffc-messaging')
-const { Client } = require('pg')
 
 const saveToDb = async (message) => {
-  const client = new Client({
-    user: process.env.POSTGRES_USERNAME,
-    password: process.env.POSTGRES_PASSWORD,
-    host: process.env.POSTGRES_HOST,
-    database: process.env.POSTGRES_DB,
-    port: 5432
-  })
-
-  await client.connect()
-  const insertQuery = `INSERT INTO messages (content) VALUES ('${message.body.content}')`
-  await client.query(insertQuery)
-  await client.end()
-  console.log('Message saved to database: ', message.body)
+  try {
+    await db.messages.create({ content: message.body.content })
+  } catch (error) {
+    console.error('ERROR: ', error)
+  }
 }
 
 const handleMessage = async (message) => {
