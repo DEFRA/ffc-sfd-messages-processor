@@ -10,3 +10,9 @@
 - key: MESSAGES_PASSWORD
   value: "MESSAGES-PASSWORD"
   type: "keyvault"
+- key: NOTIFY_API_KEY
+  value: "NOTIFY-API-KEY"
+  type: "keyvault"
+- key: NOTIFY_TEMPLATE_ID
+  value: NOTIFY-TEMPLATE-ID
+  type: "keyvault"

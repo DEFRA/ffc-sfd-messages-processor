@@ -17,6 +17,8 @@ services:
       POSTGRES_HOST: ffc-sfd-messages-processor-postgres
       POSTGRES_USERNAME: postgres
       POSTGRES_PASSWORD: ppp
+      NOTIFY_API_KEY: ${NOTIFY_API_KEY}
+      NOTIFY_TEMPLATE_ID: ${NOTIFY_TEMPLATE_ID}
 
   ffc-sfd-messages-processor-postgres:
     image: postgres:11.4-alpine

@@ -1,5 +1,7 @@
 const db = require('../data')
 const { MessageReceiver } = require('ffc-messaging')
+const NotifyClient = require('notifications-node-client').NotifyClient
+const { uuid } = require('uuidv4')
 
 const saveToDb = async (message) => {
   try {
@@ -15,9 +17,21 @@ const saveToDb = async (message) => {
   }
 }
 
+const sendViaNotify = async (message) => {
+  const notifyClient = new NotifyClient(process.env.NOTIFY_API_KEY)
+  await notifyClient.sendEmail(process.env.NOTIFY_TEMPLATE_ID, 'rana.salem@defra.gov.uk', {
+    personalisation: {
+      heading: message.body.content.heading,
+      content: message.body.content.body
+    },
+    reference: uuid()
+  })
+}
+
 const handleMessage = async (message) => {
   console.log('Received message: ', message.body)
   saveToDb(message)
+  sendViaNotify(message)
 }
 
 const startMessaging = async () => {
