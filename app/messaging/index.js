@@ -3,7 +3,13 @@ const { MessageReceiver } = require('ffc-messaging')
 
 const saveToDb = async (message) => {
   try {
-    await db.messages.create({ content: message.body.content })
+    await db.messages.create({
+      scheme: message.body.scheme,
+      tags: message.body.tags,
+      crn: message.body.crn,
+      content: message.body.content,
+      requestedDate: message.body.requestedDate
+    })
   } catch (error) {
     console.error('ERROR: ', error)
   }
