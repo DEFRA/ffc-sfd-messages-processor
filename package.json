@@ -1,6 +1,6 @@
 {
   "name": "ffc-sfd-messages-processor",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "description": "",
   "homepage": "github.com?owner=defra&repo=ffc-sfd-messages-processor&organization=defra",
   "main": "app/index.js",
@@ -29,7 +29,7 @@
     "@types/jest": "^29.5.11",
     "jest": "29.7.0",
     "jest-junit": "16.0.0",
-    "log-timestamp": "0.3.0",
+    "log-timestamp": "^0.3.0",
     "nodemon": "3.0.1",
     "standard": "17.1.0"
   },
