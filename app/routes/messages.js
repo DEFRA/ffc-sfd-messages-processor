@@ -8,7 +8,7 @@ module.exports = [
     handler: async (request, h) => {
       try {
         const result = await db.messages.findAll()
-        console.log('result: ', result[0])
+        console.log('result: ', result)
         return h.response(result).code(200)
       } catch (error) {
         console.log(error)
