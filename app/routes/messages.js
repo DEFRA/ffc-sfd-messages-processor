@@ -20,7 +20,7 @@ module.exports = [
     path: '/messages/{id}',
     handler: async (request, h) => {
       try {
-        const result = await db.messages.findOne({ where: { id: request.params.id } })
+        const result = await db.messages.findByPk(request.params.id)
         console.log('Query: select by id')
         return h.response(result).code(200)
       } catch (error) {
