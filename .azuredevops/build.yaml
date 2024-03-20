@@ -54,3 +54,8 @@ extends:
         - ffc-sfd-messages-processor-<environment>
       variables:
         - ffc-sfd-messages-processor-APPINSIGHTS-CONNECTIONSTRING
+        - ffc-sfd-messages-processor-MESSAGES-HOST
+        - ffc-sfd-messages-processor-MESSAGES-USER
+        - ffc-sfd-messages-processor-MESSAGES-PASSWORD
+        - ffc-sfd-messages-processor-NOTIFY-API-KEY
+        - ffc-sfd-messages-processor-NOTIFY-TEMPLATE-ID
