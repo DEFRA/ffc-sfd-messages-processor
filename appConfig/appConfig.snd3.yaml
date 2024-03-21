@@ -1,14 +1,14 @@
 - key: APPINSIGHTS_CONNECTIONSTRING
   value: "{{servicename}}-APPINSIGHTS-CONNECTIONSTRING"
   type: "keyvault"
-- key: MESSAGES_HOST
-  value: "{{servicename}}-MESSAGES-HOST"
+- key: MESSAGE_HOST
+  value: "{{servicename}}-MESSAGE-HOST"
   type: "keyvault"
-- key: MESSAGES_USER
-  value: "{{servicename}}-MESSAGES-USER"
+- key: MESSAGE_USER
+  value: "{{servicename}}-MESSAGE-USER"
   type: "keyvault"
-- key: MESSAGES_PASSWORD
-  value: "{{servicename}}-MESSAGES-PASSWORD"
+- key: MESSAGE_PASSWORD
+  value: "{{servicename}}-MESSAGE-PASSWORD"
   type: "keyvault"
 - key: NOTIFY_API_KEY
   value: "{{servicename}}-NOTIFY-API-KEY"
