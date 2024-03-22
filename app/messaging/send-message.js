@@ -1,4 +1,4 @@
-const { uuid } = require('uuidv4')
+const { v4: uuidv4 } = require('uuid')
 const NotifyClient = require('notifications-node-client').NotifyClient
 
 
@@ -9,7 +9,7 @@ const sendMessage = async (message) => {
       heading: message.body.content.heading,
       content: message.body.content.body
     },
-    reference: uuid()
+    reference: uuidv4()
   })
 }
 module.exports = { sendMessage }
