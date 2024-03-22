@@ -4,8 +4,8 @@ const { sendMessage } = require('./send-message')
 
 const handleMessage = async (message) => {
   console.log('Received message: ', message.body)
-  saveToDb(message)
-  sendViaNotify(message)
+  saveToDatabase(message)
+  sendMessage(message)
 }
 
 const startMessaging = async () => {
