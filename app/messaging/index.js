@@ -1,6 +1,4 @@
 const { MessageReceiver } = require('ffc-messaging')
-const { uuid } = require('uuidv4')
-const db = require('../data')
 const { saveToDatabase } = require('./save-to-database')
 const { sendMessage } = require('./send-message')
 

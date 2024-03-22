@@ -1,4 +1,6 @@
+const { uuid } = require('uuidv4')
 const NotifyClient = require('notifications-node-client').NotifyClient
+
 
 const sendMessage = async (message) => {
   const notifyClient = new NotifyClient(process.env.NOTIFY_API_KEY)
