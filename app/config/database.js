@@ -25,7 +25,7 @@ const retry = {
 }
 
 const config = {
-  database: process.env.POSTGRES_DB || 'ffc_sfd_messages_processor',
+  database: process.env.POSTGRES_DB || 'ffc-sfd-messages-processor',
   dialect: 'postgres',
   dialectOptions: {
     ssl: isProd()
