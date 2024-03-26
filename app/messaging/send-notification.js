@@ -2,7 +2,7 @@ const { v4: uuidv4 } = require('uuid')
 const NotifyClient = require('notifications-node-client').NotifyClient
 
 
-const sendMessage = async (message) => {
+const sendNotification = async (message) => {
   const notifyClient = new NotifyClient(process.env.NOTIFY_API_KEY)
   await notifyClient.sendEmail(process.env.NOTIFY_TEMPLATE_ID, 'rana.salem@defra.gov.uk', {
     personalisation: {
@@ -12,4 +12,4 @@ const sendMessage = async (message) => {
     reference: uuidv4()
   })
 }
-module.exports = { sendMessage }
+module.exports = { sendNotification }
