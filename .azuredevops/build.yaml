@@ -2,7 +2,7 @@ parameters:
 - name: deployFromFeature
   displayName: "Deploy from Feature Branch"
   type: boolean
-  default: false
+  default: true
 
 pr:
   branches:
@@ -52,5 +52,3 @@ extends:
       filetype: "yaml"
       variableGroups:
         - ffc-sfd-messages-processor-<environment>
-      variables:
-        - ffc-sfd-messages-processor-APPINSIGHTS-CONNECTIONSTRING

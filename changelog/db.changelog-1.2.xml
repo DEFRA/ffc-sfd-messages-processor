@@ -6,12 +6,16 @@
     <changeSet author="DEFRA" id="1596009647200-1">
       <tagDatabase tag="v1.0.0" />
     </changeSet>
-    <changeSet author="liquibase (generated)" id="1596009647200-2">
-        <createTable tableName="backend">
-            <column name="id" type="VARCHAR(255)">
-                <constraints nullable="false" primaryKey="true" primaryKeyName="claims_pkey"/>
+    <changeSet author="liquibase (generated)" id="1596009647200-3">
+        <createTable tableName="messages">
+            <column name="messageId" type="int" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="messageId"/>
             </column>
-            <column name="name" type="VARCHAR(255)"/>
+            <column name="scheme" type="varchar(10)"/>
+            <column name="tags" type="varchar[]"/>
+            <column name="crn" type="varchar(10)"/>
+            <column name="content" type="json"/>
+            <column name="requestedDate" type="timestamp"/>
         </createTable>
     </changeSet>
 </databaseChangeLog>
