@@ -42,5 +42,5 @@ if (result.error) {
 const processorSubscription = { ...result.value.messageQueue, ...result.value.processorSubscription }
 
 module.exports = {
-  processorSubscription,
+  processorSubscription
 }
