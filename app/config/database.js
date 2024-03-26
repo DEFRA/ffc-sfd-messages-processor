@@ -31,7 +31,7 @@ const config = {
     ssl: isProd()
   },
   hooks,
-  host: process.env.POSTGRES_HOST || 'ffc-pay-messages-processor-postgres',
+  host: process.env.POSTGRES_HOST || 'ffc-sfd-messages-processor-postgres',
   password: process.env.POSTGRES_PASSWORD,
   port: process.env.POSTGRES_PORT || 5432,
   logging: process.env.POSTGRES_LOGGING || false,
