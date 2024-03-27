@@ -1,39 +1,26 @@
+const util = require('util')
+const { messageConfig } = require('../config')
 const { MessageReceiver } = require('ffc-messaging')
-const { Client } = require('pg')
+const { saveToDatabase } = require('./save-to-database')
+const { sendNotification } = require('./send-notification')
 
-const saveToDb = async (message) => {
-  const client = new Client({
-    user: process.env.POSTGRES_USERNAME,
-    password: process.env.POSTGRES_PASSWORD,
-    host: process.env.POSTGRES_HOST,
-    database: process.env.POSTGRES_DB,
-    port: 5432
-  })
-
-  await client.connect()
-  const insertQuery = `INSERT INTO messages (content) VALUES ('${message.body.content}')`
-  await client.query(insertQuery)
-  await client.end()
-  console.log('Message saved to database: ', message.body)
-}
-
-const handleMessage = async (message) => {
-  console.log('Received message: ', message.body)
-  saveToDb(message)
+const handleMessage = async (message, receiver) => {
+  try {
+    console.log('Received message: ', message.body)
+    await saveToDatabase(message)
+    await sendNotification(message)
+    await receiver.completeMessage(message)
+  } catch (err) {
+    console.error('Error with message-processor message:', util.inspect(err.message, false, null, true))
+  }
 }
 
 const startMessaging = async () => {
-  const receiver = new MessageReceiver({
-    useCredentialChain: false,
-    host: process.env.MESSAGE_HOST,
-    username: process.env.MESSAGE_USER,
-    password: process.env.MESSAGE_PASSWORD,
-    address: 'ffc-sfd-messages-processor',
-    topic: 'ffc-sfd-messages',
-    type: 'subscription'
-  }, handleMessage)
-
-  await receiver.subscribe()
+  let processorReceiver //eslint-disable-line
+  const processorAction = message => handleMessage(message, processorReceiver)
+  processorReceiver = new MessageReceiver(messageConfig.processorSubscription, processorAction)
+  await processorReceiver.subscribe()
+  console.info('Receiver ready to receive processor messages')
 }
 
 module.exports = { startMessaging }
