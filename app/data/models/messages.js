@@ -5,7 +5,8 @@ module.exports = (sequelize, DataTypes) => {
     tags: DataTypes.ARRAY(DataTypes.STRING),
     crn: DataTypes.STRING(10),
     content: DataTypes.JSON,
-    requestedDate: DataTypes.DATE
+    requestedDate: DataTypes.DATE,
+    sbi: DataTypes.STRING(9)
   },
   {
     tableName: 'messages',
