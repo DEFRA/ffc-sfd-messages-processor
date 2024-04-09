@@ -17,15 +17,15 @@ module.exports = [
   },
   {
     method: GET,
-    path: '/messages/{id}',
+    path: '/messages/{sbi}',
     handler: async (request, h) => {
-      try {
-        const result = await db.messages.findByPk(request.params.id)
-        console.log('Query: select by id')
-        return h.response({ data: result }).code(200)
-      } catch (error) {
-        console.log(error)
-      }
+      const result = await db.messages.findAll({
+        where: {
+          sbi: request.params.sbi
+        }
+      })
+      console.log('Query: select by sbi')
+      return h.response({ date: result }).code(200)
     }
   }
 ]
