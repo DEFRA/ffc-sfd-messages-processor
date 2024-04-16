@@ -23,7 +23,6 @@ module.exports = [
     path: '/messages/{sbi}/{id}',
     handler: async (request, h) => {
       try {
-        console.log('SBI and ID: ', request.params.sbi, request.params.id)
         const result = await db.messages.findOne({
           where: {
             sbi: request.params.sbi,
