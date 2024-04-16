@@ -12,7 +12,6 @@ module.exports = [
             sbi: request.params.sbi
           }
         })
-        console.log('Query: select by sbi')
         return h.response({ data: result }).code(200)
       } catch (error) {
         console.log(error)
@@ -31,7 +30,6 @@ module.exports = [
             messageId: request.params.id
           }
         })
-        console.log('Query: select by sbi then by id')
         return h.response({ data: result }).code(200)
       } catch (error) {
         console.log(error)
