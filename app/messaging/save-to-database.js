@@ -6,6 +6,7 @@ const saveToDatabase = async (message) => {
       scheme: message.body.scheme,
       tags: message.body.tags,
       crn: message.body.crn,
+      sbi: message.body.sbi,
       content: message.body.content,
       requestedDate: message.body.requestedDate
     })
