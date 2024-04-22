@@ -3,11 +3,7 @@ const db = require('../data')
 const saveToDatabase = async (message) => {
   try {
     const requestedDate = new Date(message.body.requestedDate)
-    const day = requestedDate.getDate().toString().padStart(2, '0')
-    const month = (requestedDate.getMonth() + 1).toString().padStart(2, '0')
-    const year = requestedDate.getFullYear()
-
-    const formattedDate = `${day}-${month}-${year}`
+    const formattedDate = requestedDate.toLocaleDateString('en-GB')
 
     await db.messages.create({
       scheme: message.body.scheme,
