@@ -3,12 +3,11 @@ const db = require('../data')
 const saveToDatabase = async (message) => {
   try {
     const requestedDate = new Date(message.body.requestedDate)
-    const formattedDate = `${requestedDate
-      .getDate()
-      .toString()
-      .padStart(2, '0')}/${(requestedDate.getMonth() + 1)
-      .toString()
-      .padStart(2, '0')}/${requestedDate.getFullYear()}`
+    const day = requestedDate.getDate().toString().padStart(2, '0')
+    const month = (requestedDate.getMonth() + 1).toString().padStart(2, '0')
+    const year = requestedDate.getFullYear()
+
+    const formattedDate = `${day}-${month}-${year}`
 
     await db.messages.create({
       scheme: message.body.scheme,
@@ -22,4 +21,5 @@ const saveToDatabase = async (message) => {
     console.error('ERROR: ', error)
   }
 }
+
 module.exports = { saveToDatabase }
