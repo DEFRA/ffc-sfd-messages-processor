@@ -1,15 +1,21 @@
 const db = require('../data')
 
 const formatDateToUK = (date) => {
-  const day = String(date.getDate()).padStart(2, '0')
-  const month = String(date.getMonth() + 1).padStart(2, '0')
+  const day = date.getDate()
+  const month = date.getMonth()
   const year = date.getFullYear()
-  return `${day}-${month}-${year}`
+  return new Date(day, month, year)
 }
 
 const saveToDatabase = async (message) => {
   try {
-    const formattedDate = formatDateToUK(new Date(message.body.requestedDate))
+    const requestedDate = new Date(message.body.requestedDate)
+
+    if (isNaN(requestedDate)) {
+      throw new Error('Invalid requestedDate')
+    }
+
+    const formattedDate = formatDateToUK(requestedDate)
 
     await db.messages.create({
       scheme: message.body.scheme,
@@ -20,7 +26,7 @@ const saveToDatabase = async (message) => {
       requestedDate: formattedDate
     })
   } catch (error) {
-    console.error('ERROR: ', error)
+    console.error(error)
   }
 }
 
