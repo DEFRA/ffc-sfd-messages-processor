@@ -1,21 +1,15 @@
+const { format, parse } = require('date-fns')
 const db = require('../data')
-
-const formatDateToUK = (date) => {
-  const day = date.getDate()
-  const month = date.getMonth()
-  const year = date.getFullYear()
-  return new Date(year, month, day)
-}
 
 const saveToDatabase = async (message) => {
   try {
-    const requestedDate = new Date(message.body.requestedDate)
+    const requestedDate = parse(
+      message.body.requestedDate,
+      'dd-MM-yyyy',
+      new Date()
+    )
 
-    if (isNaN(requestedDate)) {
-      throw new Error('Invalid requestedDate')
-    }
-
-    const formattedDate = formatDateToUK(requestedDate)
+    const requestedDateUK = format(requestedDate, 'yyyy-MM-dd')
 
     await db.messages.create({
       scheme: message.body.scheme,
@@ -23,7 +17,7 @@ const saveToDatabase = async (message) => {
       crn: message.body.crn,
       sbi: message.body.sbi,
       content: message.body.content,
-      requestedDate: formattedDate
+      requestedDate: requestedDateUK
     })
   } catch (error) {
     console.error(error)
