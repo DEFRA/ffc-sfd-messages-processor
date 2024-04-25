@@ -4,7 +4,7 @@ const formatDateToUK = (date) => {
   const day = date.getDate()
   const month = date.getMonth()
   const year = date.getFullYear()
-  return new Date(day, month, year)
+  return new Date(year, month, day)
 }
 
 const saveToDatabase = async (message) => {
