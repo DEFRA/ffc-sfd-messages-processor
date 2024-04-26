@@ -9,7 +9,7 @@ services:
     container_name: ffc-sfd-messages-processor-development
     ports:
       - "3006:3006"
-      - "9006:9226"
+      - "9006:9229"
     volumes:
       - ./app:/home/node/app
       - ./test:/home/node/test
