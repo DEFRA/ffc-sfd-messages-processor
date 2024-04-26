@@ -1,15 +1,8 @@
-const { format, parse } = require('date-fns')
 const db = require('../data')
 
 const saveToDatabase = async (message) => {
   try {
-    const requestedDate = parse(
-      message.body.requestedDate,
-      'dd-MM-yyyy',
-      new Date()
-    )
-
-    const requestedDateUK = format(requestedDate, 'yyyy-MM-dd')
+    const [day, month, year] = message.body.requestedDate.split('-')
 
     await db.messages.create({
       scheme: message.body.scheme,
@@ -17,7 +10,7 @@ const saveToDatabase = async (message) => {
       crn: message.body.crn,
       sbi: message.body.sbi,
       content: message.body.content,
-      requestedDate: requestedDateUK
+      requestedDate: new Date(`${year}-${month}-${day}`)
     })
   } catch (error) {
     console.error(error)
