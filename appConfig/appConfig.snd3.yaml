@@ -21,6 +21,6 @@
 - key: POSTGRES_USERNAME
   value: "sndadpinfmi3401-ffc-sfd-messages-processor"
 - key: PROCESSOR_SUBSCRIPTION_ADDRESS
-  value: "ffc-sfd-messages-processor"
+  value: "fcp-sfd-messages-processor"
 - key: PROCESSOR_TOPIC_ADDRESS
-  value: "ffc-sfd-messages"
+  value: "fcp-sfd-messages"
