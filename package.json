@@ -1,6 +1,6 @@
 {
   "name": "ffc-sfd-messages-processor",
-  "version": "0.1.51",
+  "version": "0.1.52",
   "description": "",
   "homepage": "github.com?owner=defra&repo=ffc-sfd-messages-processor&organization=defra",
   "main": "app/index.js",
@@ -22,7 +22,7 @@
   "dependencies": {
     "@hapi/hapi": "21.3.2",
     "applicationinsights": "2.8.0",
-    "ffc-messaging": "2.9.0",
+    "ffc-messaging": "2.10.0",
     "hapi-pino": "12.1.0",
     "joi": "17.12.2",
     "log-timestamp": "^0.3.0",
