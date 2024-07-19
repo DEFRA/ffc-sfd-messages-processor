@@ -1,6 +1,6 @@
 {
   "name": "ffc-sfd-messages-processor",
-  "version": "0.1.54",
+  "version": "0.1.55",
   "description": "",
   "homepage": "github.com?owner=defra&repo=ffc-sfd-messages-processor&organization=defra",
   "main": "app/index.js",
