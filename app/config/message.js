@@ -24,11 +24,11 @@ const config = {
     useCredentialChain: process.env.NODE_ENV === PRODUCTION,
     appInsights: process.env.NODE_ENV === PRODUCTION ? require('applicationinsights') : undefined
   },
-  processorSubscription: 
+  processorSubscription: {
     address: process.env.MESSAGES_SUBSCRIPTION_ADDRESS,
     topic: process.env.MESSAGES_TOPIC_ADDRESS,
     type: 'subscription'
-  
+  }
 }
 
 const result = schema.validate(config, {
