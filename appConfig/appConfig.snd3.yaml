@@ -13,8 +13,8 @@
 - key: NOTIFY_API_KEY
   value: "{{servicename}}-NOTIFY-API-KEY"
   type: "keyvault"
-- key: NOTIFY_TEMPLATE_ID
-  value: "{{servicename}}-NOTIFY-TEMPLATE-ID"
+- key: NOTIFY_MESSAGES_TEMPLATE_ID
+  value: "{{servicename}}-NOTIFY-MESSAGES-TEMPLATE-ID"
   type: "keyvault"
 - key: POSTGRES_HOST
   value: "sndadpdbsps3401.postgres.database.azure.com"

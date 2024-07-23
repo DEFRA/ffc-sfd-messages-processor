@@ -11,7 +11,7 @@ const handleMessage = async (message, receiver) => {
     await sendNotification(message)
     await receiver.completeMessage(message)
   } catch (err) {
-    console.error('Error with message-processor message:', util.inspect(err.message, false, null, true))
+    console.error('Error with processing message:', util.inspect(err.message, false, null, true))
   }
 }
 
