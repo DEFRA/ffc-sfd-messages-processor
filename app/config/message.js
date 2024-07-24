@@ -25,8 +25,8 @@ const config = {
     appInsights: process.env.NODE_ENV === PRODUCTION ? require('applicationinsights') : undefined
   },
   processorSubscription: {
-    address: process.env.MESSAGES_SUBSCRIPTION_ADDRESS,
-    topic: process.env.MESSAGES_TOPIC_ADDRESS,
+    address: process.env.PROCESSOR_SUBSCRIPTION_ADDRESS,
+    topic: process.env.PROCESSOR_TOPIC_ADDRESS,
     type: 'subscription'
   }
 }
