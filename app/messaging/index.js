@@ -18,7 +18,7 @@ const startMessaging = async () => {
   const processorAction = message => handleMessage(message, processorReceiver)
   processorReceiver = new MessageReceiver(messageConfig.processorSubscription, processorAction)
   await processorReceiver.subscribe()
-  console.info('Receiver ready to receive processor messages')
+  console.info('Messages processor is ready to receive messages')
 }
 
 module.exports = { startMessaging }
