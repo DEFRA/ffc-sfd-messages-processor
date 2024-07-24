@@ -24,7 +24,3 @@
   value: "fcp-sfd-messages-processor"
 - key: PROCESSOR_TOPIC_ADDRESS
   value: "fcp-sfd-messages"
-- key: MESSAGES_SUBSCRIPTION_ADDRESS
-  value: "fcp-sfd-customer-receiver-messages"
-- key: MESSAGES_TOPIC_ADDRESS
-  value: "fcp-sfd-customer-messages"
