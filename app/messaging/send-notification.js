@@ -7,9 +7,9 @@ const sendNotification = async (message) => {
     process.env.NOTIFY_MESSAGES_TEMPLATE_ID,
     process.env.NOTIFY_TEST_EMAIL, {
       personalisation: {
-        heading: message.body.content.heading,
-        content: message.body.content.body,
-        messagesHyperlink: `localhost:3000/messages/?organisationId=${message.body.organisationId}`
+        heading: message.body.heading,
+        content: message.body.body,
+        messagesHyperlink: `http://localhost:3000/messages/?organisationId=${message.body.organisationId}`
       },
       reference: uuidv4()
     })
