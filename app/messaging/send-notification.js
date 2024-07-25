@@ -9,7 +9,7 @@ const sendNotification = async (message) => {
       personalisation: {
         heading: message.body.heading,
         content: message.body.body,
-        messagesHyperlink: `http://localhost:3000/messages/?organisationId=${message.body.organisationId}`
+        messagesHyperlink: `http://localhost:3000/messages/notification/${message.body.sbi}/${message.body.id}/?organisationId=${message.body.organisationId}`
       },
       reference: uuidv4()
     })
