@@ -1,12 +1,14 @@
 const util = require('util')
 const { messageConfig } = require('../config')
 const { MessageReceiver } = require('ffc-messaging')
-const { sendNotification } = require('./send-notification')
+// const { sendNotification } = require('./send-notification')
+const { sendToCrm } = require('./send-to-crm')
 
 const handleMessage = async (message, receiver) => {
   try {
     console.log('Received message: ', message.body)
-    await sendNotification(message)
+    // await sendNotification(message)
+    await sendToCrm(message)
     await receiver.completeMessage(message)
   } catch (err) {
     console.error('Error with processing message:', util.inspect(err.message, false, null, true))
