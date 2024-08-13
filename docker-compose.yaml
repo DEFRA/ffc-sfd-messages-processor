@@ -28,7 +28,7 @@ services:
       CRM_TOPIC_ADDRESS: ${CRM_TOPIC_ADDRESS}-${DEV_SUFFIX}
 
   ffc-sfd-messages-processor-postgres:
-    image: postgres:11.4-alpine
+    image: postgres:15
     environment:
       POSTGRES_DB: ffc-sfd-messages-processor
       POSTGRES_PASSWORD: ppp
