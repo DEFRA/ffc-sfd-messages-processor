@@ -37,7 +37,7 @@ services:
       - ./scripts:/scripts
 
   ffc-sfd-messages-processor-postgres:
-    image: postgres:11.4-alpine
+    image: postgres:15
     environment: *common-postgres
     volumes:
       - postgres_data:/var/lib/postgresql/data
